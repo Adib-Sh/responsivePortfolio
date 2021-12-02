@@ -1,0 +1,22 @@
+{
+  "name": "modern_portfolio",
+  "version": "1.0.0",
+  "description": "Responsive portfolio website",
+  "main": "index.js",
+  "scripts": {
+    "sass": "node-sass -w scss/ -o dist/css --recursive"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/neoadib/responsive_portfolio.git"
+  },
+  "author": "Adib Shaker",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/neoadib/responsive_portfolio/issues"
+  },
+  "homepage": "https://github.com/neoadib/responsive_portfolio#readme",
+  "dependencies": {
+    "node-sass": "^6.0.1"
+  }
+}
