@@ -115,11 +115,61 @@ main {
   }
 }
 
+// Work/Projects
+.projects {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+
+  img {
+    width: 100%;
+    border: solid 3px #fff;
+    @include easeOut;
+
+    &:hover {
+      border: solid 3px $secondary-color;
+      opacity: 0.8;
+      cursor: pointer;
+    }
+  }
+}
+
+// Footer
 #main-footer {
   text-align: center;
   padding: 1rem;
   background: darken($primary-color, 10);
   height: 60px;
+}
+
+// Button styles
+.btn {
+  display: block;
+  padding: 0.5rem 1rem;
+  border: 0;
+  margin-bottom: 0.3rem;
+  text-align: center;
+  @include easeOut;
+
+  &:hover {
+    background: $secondary-color;
+  }
+}
+
+.btn-dark {
+  @extend .btn;
+  background: darken($primary-color, 50);
+  color: #fff;
+
+  &:hover {
+    color: #333;
+  }
+}
+
+.btn-light {
+  @extend .btn;
+  background: lighten($primary-color, 50);
+  color: #333;
 }
 
 @import "mobile";
