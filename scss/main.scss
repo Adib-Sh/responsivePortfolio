@@ -1,6 +1,5 @@
 @import "config";
 @import "menu";
-@import "mobile";
 @import url("https://fonts.googleapis.com/css2?family=Gugi&display=swap");
 
 * {
@@ -8,13 +7,11 @@
 }
 
 body {
-  background: $home-image;
   @include background;
-  // background-color: $primary-color;
+  background-color: $primary-color;
   color: #fff;
   height: 100%;
   margin: 0;
-  // font-family: "M PLUS Code Latin", sans-serif;
   font-family: "Gugi", cursive;
   line-height: 1.5;
 }
@@ -54,7 +51,9 @@ header {
 
 main {
   padding: 4rem;
-  height: 100%;
+  min-height: -webkit-calc(100vh - 60px);
+  min-height: -moz-calc(100vh - 60px);
+  min-height: calc(100vh - 60px);
 
   &#home {
     overflow: hidden;
@@ -75,3 +74,52 @@ main {
     }
   }
 }
+
+.about-info {
+  display: grid;
+  grid-gap: 30px;
+  grid-template-areas:
+    "bioimage bio bio"
+    "job1 job2 job3";
+  grid-template-columns: repeat(3, 1fr);
+
+  .bio-image {
+    grid-area: bioimage;
+    margin: auto;
+    border-radius: 50%;
+    border: $secondary-color solid 3px;
+  }
+
+  .bio {
+    grid-area: bio;
+    font-size: 1.5rem;
+    align-items: center;
+  }
+
+  .job-1 {
+    grid-area: job1;
+  }
+
+  .job-2 {
+    grid-area: job2;
+  }
+
+  .job-3 {
+    grid-area: job3;
+  }
+
+  .job {
+    background: lighten($primary-color, 5);
+    padding: 0.5rem;
+    border-bottom: 5px solid $secondary-color;
+  }
+}
+
+#main-footer {
+  text-align: center;
+  padding: 1rem;
+  background: darken($primary-color, 10);
+  height: 60px;
+}
+
+@import "mobile";
